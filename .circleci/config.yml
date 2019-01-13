@@ -11,13 +11,16 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key:
-            - dependency-cache-{{ checksum "package.json" }}
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run:
           name: Run npm install
           command: npm install
+      - run:
+          name: Run tests
+          command: npm test
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -25,14 +28,6 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Run tests
-          command: npm test
   deploy:
     <<: *defaults
     steps:
@@ -47,26 +42,12 @@ jobs:
 
 workflows:
   version: 2
-  build-test:
+  build-deploy:
     jobs:
       - build
-          filters:
-            branches:
-              ignore: master
-      - test:
-          requires:
-            - build
-  build-test-deploy:
-    jobs:
-      - build
-          filters:
-            branches:
-              only: master
-            tags:
-              only: /^v.*/
-      - test:
-          requires:
-            - build
       - deploy:
           requires:
-            - test
+            - build
+          filters:
+            tags:
+              only: /^v.*/
