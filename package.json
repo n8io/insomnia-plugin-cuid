@@ -1,0 +1,21 @@
+{
+  "author": "Nate Clark <n8@n8io.com>",
+  "dependencies": {
+    "cuid": "^2.1.4"
+  },
+  "description": "Generate a cuid",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "insomnia": {
+    "description": "Generate a cuid",
+    "name": "cuid"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "insomnia-plugin-cuid",
+  "scripts": {
+    "test": "jest --silent"
+  },
+  "version": "1.0.0"
+}
