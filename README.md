@@ -2,6 +2,8 @@
 
 # insomnia-plugin-cuid
 
+[![CircleCI](https://circleci.com/gh/n8io/insomnia-plugin-cuid.svg?style=svg)](https://circleci.com/gh/n8io/insomnia-plugin-cuid)
+
 An ![Insomnia](https://www.google.com/s2/favicons?domain=insomnia.rest) [Insomnia](https://insomnia.rest/) plugin for generating [`cuids`](https://github.com/ericelliott/cuid)
 
 ![screenshot](./screenshot.png)

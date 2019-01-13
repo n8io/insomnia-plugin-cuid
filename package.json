@@ -15,10 +15,11 @@
   "main": "index.js",
   "name": "insomnia-plugin-cuid",
   "repository": {
-    "url": "https://github.com/n8io/insomnia-plugin-cuid"
+    "type": "git",
+    "url": "git@github.com:n8io/insomnia-plugin-cuid.git"
   },
   "scripts": {
     "test": "jest --silent"
   },
-  "version": "1.2.2"
+  "version": "1.2.3"
 }
