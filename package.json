@@ -5,7 +5,7 @@
   },
   "description": "Generate a cuid",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^29.3.1"
   },
   "insomnia": {
     "description": "Generate a cuid",
